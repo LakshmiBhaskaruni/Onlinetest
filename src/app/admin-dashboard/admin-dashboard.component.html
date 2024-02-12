@@ -1,0 +1,117 @@
+<div class="container-fluid">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarsExample11"
+    aria-controls="navbarsExample11"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+    <a class="navbar-brand col-lg-3 me-0" href="#"
+      ><h2>Online Test Admin Portal</h2></a
+    >
+    <ul class="navbar-nav col-lg-6 justify-content-lg-center"></ul>
+    <div class="d-lg-flex col-lg-3 justify-content-lg-end">
+      <button class="btn btn-primary" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <ul
+    class="nav nav-pills nav-fill gap-2 p-1 small bg-primary rounded-5 shadow-sm"
+    id="pillNav2"
+    role="tablist"
+    style="
+      --bs-nav-link-color: var(--bs-white);
+      --bs-nav-pills-link-active-color: var(--bs-primary);
+      --bs-nav-pills-link-active-bg: var(--bs-white);
+    "
+  >
+    <li class="nav-item" role="presentation">
+      <button
+        [routerLink]="['/admin-dashboard/home']"
+        class="nav-link rounded-5 active"
+        id="home-tab2"
+        data-bs-toggle="tab"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        
+      >
+        Home
+      </button>
+    </li>
+  
+
+    <li class="nav-item" role="presentation">
+      <button
+        [routerLink]="['/admin-dashboard/create-test']"
+        class="nav-link rounded-5"
+        id="home-tab2"
+        data-bs-toggle="tab"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        
+      >
+        Create Test
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        [routerLink]="['/admin-dashboard/view-test']"
+        class="nav-link rounded-5"
+        id="profile-tab2"
+        data-bs-toggle="tab"
+        type="button"
+        role="tab"
+        aria-selected="true"
+       
+      >
+        View Test
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        [routerLink]="['/admin-dashboard/view-users']"
+        class="nav-link rounded-5"
+        id="contact-tab2"
+        data-bs-toggle="tab"
+        type="button"
+        role="tab"
+        aria-selected="true"
+        
+      >
+        View Users
+      </button>
+    </li>
+  </ul>
+</div>
+<hr />
+
+<router-outlet></router-outlet>
+
+<!-- <div *ngIf="isHome">
+  <h3>Hello {{currentUser}}</h3>
+</div> 
+<div *ngIf="isCreatetest">
+  <app-create-test></app-create-test>
+</div>
+<div *ngIf="isViewTest">
+  <app-view-test></app-view-test>
+</div>
+<div *ngIf="isViewUsers">
+  <app-view-users></app-view-users> 
+</div> -->
+<!-- <div>
+  <app-view-users
+   [childVar]="parentVar"
+   (emitterEvent)="onEventClicked($event)"
+  ></app-view-users> 
+  {{parentVar1}}
+</div> -->

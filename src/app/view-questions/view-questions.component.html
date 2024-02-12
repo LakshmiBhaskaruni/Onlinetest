@@ -1,0 +1,53 @@
+
+
+<br />
+<h3>Test: {{testTitle}}</h3>
+<br>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Question Id</th>
+      <th scope="col">Question Title</th>
+      <th scope="col">Option 1</th>
+      <th scope="col">Option 2</th>
+      <th scope="col">Option 3</th>
+      <th scope="col">Option 4</th>
+      <th scope="col">Correct Answer</th>
+      <th scope="col">Marks Allocated</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let question of questions">
+      <td scope="row">{{question.questionId}}</td>
+      <td>{{question.questionTitle}}</td>
+      <td>{{question.questionOptions[0]}}</td>
+      <td>{{question.questionOptions[1]}}</td>
+      <td>{{question.questionOptions[2]}}</td>
+      <td>{{question.questionOptions[3]}}</td>
+      <td>{{question.questionOptions[question.questionAnswer]}}</td>
+      <td>{{question.questionMarks}}</td>
+      <td>
+        <div class="container">
+          <button
+          class="btn btn-outline-primary"
+          value="Update Question"
+          (click)="updateQuestion(question.questionId)"
+        >
+          Update
+        </button>
+        <button class="btn btn-outline-danger" 
+        value="Delete Question"
+        (click)="deleteQuestion(question.questionId)"
+        >
+          Delete
+        </button>
+        </div>
+        
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <button type="button" class="btn btn-outline-dark btn-lg" routerLink="/admin-dashboard/view-test">Back</button>  
+</div>

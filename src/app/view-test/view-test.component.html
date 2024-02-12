@@ -1,0 +1,66 @@
+<br />
+<table class="table rounded-5">
+  <thead>
+    <tr>
+      <th scope="col">Test Id</th>
+      <th scope="col">Test Title</th>
+      <th scope="col">Test Duration</th>
+      <th scope="col">Test Start Time</th>
+      <th scope="col">Test End Time</th>
+      <th scope="col">Action</th>
+      <!-- <th scope="col">Action</th>
+      <th scope="col">Action</th>
+      <th scope="col">Action</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let test of tests">
+      <td scope="row">{{test.testId}}</td>
+      <td>{{test.testTitle}}</td>
+      <td>{{test.testDuration}}</td>
+      <td>{{test.startTime | date:'short'}}</td>
+      <td>{{test.endTime | date:'short'}}</td>
+      <td>
+        <a [routerLink]="['create-question', test.testId]">
+          <button
+            class="btn btn-outline-primary btn-sm"
+            value="Add Question">
+            Add Question
+          </button>
+        </a>
+
+
+      <!-- </td> -->
+      <!-- <td> -->
+        <a [routerLink]="['view-questions', test.testId]">
+        <button
+          class="btn btn-outline-primary btn-sm"
+          value="Add Question">
+          View Questions
+        </button>
+        </a>
+      <!-- </td> -->
+      <!-- <td> -->
+          <a [routerLink]="['/assign-test', test.testId]">
+              <button
+                      class="btn btn-outline-primary btn-sm"
+                      value="Add Question">
+                  Assign Test
+              </button>
+          </a>
+          
+
+      <!-- </td>
+      <td> -->
+        
+        <button class="btn btn-outline-danger btn-sm" 
+          value="Delete Test"
+          (click)="deleteTest(test.testId)">
+          Delete Test
+        </button>
+      
+      </td>
+    </tr>
+  </tbody>
+</table>
+<router-outlet></router-outlet>

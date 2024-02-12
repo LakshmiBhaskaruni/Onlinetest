@@ -1,0 +1,30 @@
+<br />
+<h1>
+  name: {{childVar}}
+</h1>
+<button (click)="onEvent()">
+emit
+</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">User Id</th>
+      <th scope="col">User Name</th>
+      <th scope="col">Role</th>
+      <th scope="col">Test Id</th>
+      <th scope="col">Test Attended</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td scope="row">{{user.userId}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.role}}</td>
+      <td>{{user.testId}}</td>
+      <td>{{user.testAttended}}</td>
+     
+    </tr>
+  </tbody>
+</table>
+

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<br>
+<div *ngIf="!isTestCompleted">
+    <div *ngFor="let question of questions, let i = index">
+
+
+        <div class="card w-75 mx-auto shadow-lg p-3 mb-5 bg-body rounded">
+            <div class="card-body">
+                <div class="row">
+                    <h5 class="card-title col-10">{{question.questionTitle}}</h5>
+                    <p class="card-title text-end col-2">Marks: {{question.questionMarks}}</p>
+                </div>
+            </div>
+            <div>
+                <div class="form-check" *ngFor="let option of question.questionOptions, let j= index">
+                    <input (click)="updateResponse(question.questionId,j)"
+                           class="form-check-input"
+                           type="radio"
+                           [name]="question.questionTitle"
+                           [id]="option"
+                    >
+                    <label class="form-check-label" [for]="option">
+                        {{option}}
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="finishTest()">Finish Test</button>
+</div>
+
+<div *ngIf="isTestCompleted" class="align-items-center">
+    <br>
+    <div class="container mx-auto d-flex justify-content-center  align-items-center" >
+
+        <div class="card p-3 mt-3 w-25 shadow-lg p-3 mb-5 bg-body rounded " >
+            <h5 class="mt-3 mb-3">Score Card</h5>
+
+            <div class="border p-2 rounded d-flex flex-row align-items-center">
+                <br>
+                <div class="p-1 px-4 d-flex flex-column align-items-center score rounded">
+<!--                    <span class="d-block char text-success">A</span>-->
+
+                </div>
+                <br>
+                <br>
+
+                <div class="ml-2 p-3">
+                    <h6 class="heading1">You have scored:</h6>
+                    <h3><span class="text-success">{{score}} / {{totalMarks}}</span></h3>
+                </div>
+                <br>
+                <br>
+
+
+            </div>
+          <a [routerLink]="['/user-dashboard', this.currentUserId]">Go To Dashboard</a>
+
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+</html>
+
+
+
+
+

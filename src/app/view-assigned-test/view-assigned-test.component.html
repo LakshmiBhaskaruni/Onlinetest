@@ -1,0 +1,32 @@
+<br/>
+
+    <div class="card shadow-lg p-3 mb-5 bg-body rounded w-25 h-100">
+
+        <div class="card-body card-header text-center">
+
+            <h3 class="card-title">
+
+                {{test.testTitle}}
+            </h3>
+
+
+        </div>
+
+        <ul class="list-group list-group-flush">
+
+            <li class="list-group-item">Duration: {{test.testDuration}} min</li>
+            <li class="list-group-item">Start Time: {{test.startTime | date:'short'}}</li>
+            <li class="list-group-item">End Time: {{test.endTime | date:'short'}}</li>
+
+
+
+        </ul>
+
+        <div class="card-body">
+
+            <a [routerLink]="['/attend-test', test.testId]" class="btn btn-primary">Attend Test</a>
+
+        </div>
+
+    </div>
+

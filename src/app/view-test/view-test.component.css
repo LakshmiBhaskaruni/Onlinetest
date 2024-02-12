@@ -1,0 +1,15 @@
+table{
+    border-style: solid;
+    border-radius: 25%;
+} 
+td{
+    border: 2px solid rgb(63, 201, 120) ; 
+}
+th{
+    border: 2px solid black;
+    background-color: rgb(235, 167, 167);
+}
+
+a{
+    padding: 10px
+}

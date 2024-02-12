@@ -1,0 +1,56 @@
+<br />
+<div class="container">
+  <form #createQuestionForm="ngForm" (ngSubmit)="createQuestion(createQuestionForm)">
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Question</label>
+      <textarea
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+        name="questionTitle"
+        ngModel
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Option 1</label>
+      <input type="text" class="form-control" id="option1" name="questionOption1" ngModel />
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Option 2</label>
+      <input type="text" class="form-control" id="option2" name="questionOption2" ngModel/>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Option 3</label>
+      <input type="text" class="form-control" id="option3" name="questionOption3" ngModel />
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Option 4</label>
+      <input type="text" class="form-control" id="option4" name="questionOption4" ngModel/>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Option select</label>
+      <select class="form-control" id="exampleFormControlSelect1" name="questionAnswer" ngModel>
+        <option value=0>1</option>
+        <option value=1>2</option>
+        <option value=2>3</option>
+        <option value=3>4</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Marks</label>
+      <input type="number" class="form-control" id="exampleFormControlInput1" name="questionMarks" ngModel />
+    </div>
+
+    <div class="container my-3">
+      <input type="submit" class="btn btn-primary mx-4" value="Submit Question">
+
+      <button
+        type="button"
+        class="btn btn-primary mx-4"
+        (click)="addAnotherQuestion()"
+      >
+        Add Question
+      </button>
+    </div>
+  </form>
+</div>
